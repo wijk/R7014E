@@ -5,8 +5,7 @@ h_eq = 3.2;
 h1 = h_1.signals.values(end);
 h2 = h_2.signals.values(end);
 q_in = q.signals.values(end);
-Q = [1];
-R = [1];
+R = [1 0; 0 1];
 Ts = 0.01;
 D = 0;
 
@@ -26,7 +25,7 @@ sys = ss(A,B,C,D);
 
 sysd = c2d(sys, 0.01); 
 
-[kest,L,P] = kalman(sys,Q,R,N);
+[P,L,G] = care(A,B,R);
 
 K = (P*C' + N*R)*inv(R);
 
