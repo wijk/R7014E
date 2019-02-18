@@ -22,13 +22,13 @@ B = [6.95/36.2; 0];
 C = [0 1];
 N = [1];
 
-sys = ss(A,B,C,D);
+sys = ss(A_2,B,C,D);
 
 sysd = c2d(sys, 0.01); 
 
 [kest,L,P] = kalman(sys,Q,R,N);
 
-K = (P*C' + N*R)*inv(R);
+K = (P*C' + NR)
 
 
 
