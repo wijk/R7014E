@@ -7,6 +7,7 @@ h1 = h_1.signals.values(end);
 h2 = h_2.signals.values(end);
 q_in = q.signals.values(end);
 R = [1 0; 0 1];
+Q = [1];
 Ts = 0.01;
 D = 0;
 EqPoint = h_2.signals.values(end);
