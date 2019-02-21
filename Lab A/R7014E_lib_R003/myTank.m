@@ -8,7 +8,7 @@ q_in = q.signals.values(end);
 R = [1 0; 0 1];
 Ts = 0.01;
 D = 0;
-EqPoint = h_1.signals.values(end);
+EqPoint = h_2.signals.values(end);
 
 A_const = a*sqrt(2*g)/2*A_a;
 
