@@ -1,6 +1,6 @@
 A_a = 33;
 ao_1 = 0.16;
-ao_2 = 0.175;
+ao_2 = 0.16;
 g = 981;
 h_eq = 3.2;
 h1 = h_1.signals(1).values(end);
@@ -10,7 +10,7 @@ R = [0.01 0; 0 0.1];
 Q = [1];
 Ts = 0.02;
 D = 0;
-EqPoint = h_2.signals.values(end);
+EqPoint = 11.5;%h_2.signals.values(end);
 
 a_1 = ao_1*sqrt(2*g)/2*A_a;
 a_2 = ao_2*sqrt(2*g)/2*A_a;
@@ -18,9 +18,6 @@ a_2 = ao_2*sqrt(2*g)/2*A_a;
 
 A = [a_1*(-1/sqrt(2*g*(h1+EqPoint))) 0 ; 
     a_1*(1/sqrt(2*g*(h1+EqPoint))) a_2*(-1/sqrt(2*g*(h2+EqPoint)))];
-
-A_2 = [-0.998 0;    
-        1.5306e-4 -0.998];
 
 B = [6.95/36.2; 0];
 C = [0 1];
