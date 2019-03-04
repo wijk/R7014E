@@ -3,14 +3,14 @@ ao_1 = 0.16;
 ao_2 = 0.16;
 g = 981;
 h_eq = 3.2;
-h1 = 7;%h_1.signals(1).values(end);
-h2 = 7.5;%h_2.signals.values(end);
+h1 = 12;%h_1.signals(1).values(end);
+h2 = 13;%h_2.signals.values(end);
 q_in = q.signals.values(end);
 R = [0.1 0; 0 0.1];
 Q = [1];
 Ts = 0.02;
 D = 0;
-EqPoint = 7;%h_2.signals.values(end);
+EqPoint = 12;%h_2.signals.values(end);
 
 a_1 = ao_1*sqrt(2*g)/2*A_a;
 a_2 = ao_2*sqrt(2*g)/2*A_a;
