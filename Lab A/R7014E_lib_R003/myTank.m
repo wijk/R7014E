@@ -3,14 +3,14 @@ ao_1 = 0.16;
 ao_2 = 0.16;
 g = 981;
 h_eq = 3.2;
-h1 = 12;%h_1.signals(1).values(end);
-h2 = 13;%h_2.signals.values(end);
+h1 = 7;%h_1.signals(1).values(end);
+h2 = 7.5%h_2.signals.values(end);
 q_in = q.signals.values(end);
 R = [0.1 0; 0 0.1];
 Q = [1];
 Ts = 0.02;
 D = 0;
-EqPoint = 12;%h_2.signals.values(end);
+EqPoint = 7;%h_2.signals.values(end);
 
 a_1 = ao_1*sqrt(2*g)/2*A_a;
 a_2 = ao_2*sqrt(2*g)/2*A_a;
@@ -30,3 +30,20 @@ sysd = c2d(sys, 0.01);
 [P,L,G] = care(A,B,R);
 
 K = (P*C' + N*0)/[0 1];
+
+i = 1849;
+n = 1;
+sumStat = 0;
+sumNonStat = 0;
+while n < i
+    sumStat = sumStat + (logY.signals.values(n) - StationaryY_hat.signals.values(n))^2;
+    sumNonStat = sumNonStat + (logY.signals.values(n) - NonStationaryY_hat.signals.values(n))^2;
+    n = n + 1;
+end
+meanStat = sumStat / i;
+meanNonStat = sumNonStat / i;
+
+RMSEStat = sqrt(meanStat);
+RMSENonStat = sqrt(meanNonStat);
+
+    
